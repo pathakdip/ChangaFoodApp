@@ -43,7 +43,6 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(Dashboard.this, "Card 1", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Dashboard.this,FoodListActivity.class);
                 intent.putExtra("canteen_name",txtCanteen1.getText().toString());
                 startActivity(intent);
@@ -54,7 +53,6 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(Dashboard.this, "Card 2", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Dashboard.this,FoodListActivity.class);
                 intent.putExtra("canteen_name",txtCanteen2.getText().toString());
                 startActivity(intent);
@@ -65,7 +63,6 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(Dashboard.this, "Card 3", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Dashboard.this,FoodListActivity.class);
                 intent.putExtra("canteen_name",txtCanteen3.getText().toString());
                 startActivity(intent);
@@ -77,7 +74,6 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(Dashboard.this, "Card 4", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Dashboard.this,FoodListActivity.class);
                 intent.putExtra("canteen_name",txtCanteen4.getText().toString());
                 startActivity(intent);
@@ -88,7 +84,6 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(Dashboard.this, "Card 5", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Dashboard.this,FoodListActivity.class);
                 intent.putExtra("canteen_name",txtCanteen5.getText().toString());
                 startActivity(intent);
@@ -99,7 +94,6 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(Dashboard.this, "Card 6", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Dashboard.this,FoodListActivity.class);
                 intent.putExtra("canteen_name",txtCanteen6.getText().toString());
                 startActivity(intent);

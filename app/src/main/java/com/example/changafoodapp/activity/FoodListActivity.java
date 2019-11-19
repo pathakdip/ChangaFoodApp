@@ -70,40 +70,40 @@ public class FoodListActivity extends AppCompatActivity {
     private void displayFoodData() {
 
 
-        Food food= new Food("Dragon Noodles with Dumplings",imgUrl);
+        Food food= new Food("Dragon Noodles with Dumplings","Rs 50",imgUrl);
         foodList.add(food);
 
-        food= new Food("DThai Stir-Fry Chicken",imgUrl);
+        food= new Food("DThai Stir-Fry Chicken","Rs 100",imgUrl);
         foodList.add(food);
 
-        food= new Food("Pan-Asian Egg 'n' Chicken Chowmein",imgUrl);
+        food= new Food("Pan-Asian Egg 'n' Chicken Chowmein","Rs 70",imgUrl);
         foodList.add(food);
 
-        food= new Food("Nizami Chicken Biriyani",imgUrl);
+        food= new Food("Nizami Chicken Biriyani","Rs 60",imgUrl);
         foodList.add(food);
 
-        food= new Food("Sholay Masala Biriyani",imgUrl);
+        food= new Food("Sholay Masala Biriyani","Rs 80",imgUrl);
         foodList.add(food);
 
-        food= new Food("Murgh Dum Biriyani",imgUrl);
+        food= new Food("Murgh Dum Biriyani","Rs 50",imgUrl);
         foodList.add(food);
 
-        food= new Food("Ghee-Roast Chicken Biriyani",imgUrl);
+        food= new Food("Ghee-Roast Chicken Biriyani","Rs 90",imgUrl);
         foodList.add(food);
 
-        food= new Food("Mutter Paneer Dum Biriyani",imgUrl);
+        food= new Food("Mutter Paneer Dum Biriyani","Rs 60",imgUrl);
         foodList.add(food);
 
-        food= new Food("Mutter Paneer Dum Biriyani",imgUrl);
+        food= new Food("Mutter Paneer Dum Biriyani","Rs 70",imgUrl);
         foodList.add(food);
 
-        food= new Food("Cilantro Asian Chicken Bowl",imgUrl);
+        food= new Food("Cilantro Asian Chicken Bowl","Rs 100",imgUrl);
         foodList.add(food);
 
-        food= new Food("Thai Stir-Fry Chicken",imgUrl);
+        food= new Food("Thai Stir-Fry Chicken","Rs 70",imgUrl);
         foodList.add(food);
 
-        food= new Food("Black Pepper Honey Chicken 'n' Noodles",imgUrl);
+        food= new Food("Black Pepper Honey Chicken 'n' Noodles","Rs 50",imgUrl);
         foodList.add(food);
 
 

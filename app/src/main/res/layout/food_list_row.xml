@@ -27,6 +27,13 @@
             android:textColor="#000000"
             android:text="Food Title"/>
 
+        <TextView
+            android:id="@+id/txtFoodItemPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rs. 50"
+            android:textColor="#000000"/>
+
     </LinearLayout>
 
     <ImageView

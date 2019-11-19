@@ -114,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
         txtRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Register here",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(MainActivity.this,RegistrationActivity.class));
 
             }

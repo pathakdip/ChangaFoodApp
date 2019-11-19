@@ -46,6 +46,8 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
         final Food foodItem = foodList.get(position);
         holder.foodTitle.setText(foodItem.getTitle());
 
+        holder.foodPrice.setText(foodItem.getPrice());
+
         Log.e("FoodApater","item: "+foodItem.getTitle());
 
         Glide.with(context).load(url).into(holder.imageView);
@@ -63,6 +65,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
                 Toast.makeText(context, "Item Added to cart", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(context, AddToCartActivity.class);
                 intent.putExtra("product_name",foodItem.getTitle());
+                intent.putExtra("product_price",foodItem.getPrice());
                 context.startActivity(intent);
             }
         });
@@ -76,13 +79,14 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView foodTitle;
+        TextView foodTitle,foodPrice;
         ImageView imageView,imgAddtoCart;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             foodTitle=itemView.findViewById(R.id.txtFoodTitle);
+            foodPrice=itemView.findViewById(R.id.txtFoodItemPrice);
             imageView=itemView.findViewById(R.id.imgFoodItem);
             imgAddtoCart=itemView.findViewById(R.id.imgAddtoCart);
         }
