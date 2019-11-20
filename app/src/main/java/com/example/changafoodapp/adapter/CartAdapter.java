@@ -64,12 +64,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                     holder.btnReduceItem.setEnabled(true);
                     holder.txtProductCount.setText(String.valueOf(parsedInt-1));
 
-                    //calculating total amount of item
-                   /* String amt=holder.txtProductprice.getText().toString().trim();
-                    int parsedAmt=Integer.parseInt(amt);
-                    int total_amt=parsedAmt*parsedInt;
-                    holder.txtProductTotalPrice.setText(total_amt);*/
-
                 }
             }
         });
@@ -83,11 +77,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                 holder.btnReduceItem.setEnabled(true);
                 holder.txtProductCount.setText(String.valueOf(parsedInt+1));
 
-               /* String amt=holder.txtProductprice.getText().toString().trim();
-                Log.e("CartAdapter","amt: "+amt);
-                int parsedAmt=Integer.parseInt(amt);
-                int total_amt=parsedAmt*parsedInt;
-                holder.txtProductTotalPrice.setText(total_amt);*/
             }
         });
 

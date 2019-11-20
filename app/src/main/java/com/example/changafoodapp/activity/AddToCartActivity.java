@@ -52,8 +52,15 @@ public class AddToCartActivity extends AppCompatActivity {
         String name=getIntent().getStringExtra("product_name");
         Log.e("AddToCart","product name: "+name);
         String price=getIntent().getStringExtra("product_price");
-        foodLists.add(price);
+        //foodLists.add(price);
         foodLists.add(name);
+
+        //displaying list of product in cart
+        recyclerView=findViewById(R.id.cartRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter=new CartAdapter(AddToCartActivity.this,foodLists,name,price);
+        recyclerView.setAdapter(adapter);
+
 
         //adding item to database
         rootRef = FirebaseDatabase.getInstance().getReference().child("foodItems");
@@ -81,11 +88,6 @@ public class AddToCartActivity extends AppCompatActivity {
 
 
 
-        //displaying list of product in cart
-        recyclerView=findViewById(R.id.cartRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter=new CartAdapter(AddToCartActivity.this,foodLists,name,price);
-        recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
         //moving to previous screen
@@ -100,7 +102,7 @@ public class AddToCartActivity extends AppCompatActivity {
         btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AddToCartActivity.this,"Place Order",Toast.LENGTH_LONG).show();
+                Toast.makeText(AddToCartActivity.this,"Order Placed Successfully!",Toast.LENGTH_LONG).show();
             }
         });
 
