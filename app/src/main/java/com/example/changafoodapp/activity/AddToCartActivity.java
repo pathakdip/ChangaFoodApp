@@ -52,12 +52,10 @@ public class AddToCartActivity extends AppCompatActivity {
 
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
-
         //initialising views
         imgBack=findViewById(R.id.imgBack);
         btnPlaceOrder=findViewById(R.id.btnPlaceOrder);
         btnContinueOrder=findViewById(R.id.btnContinueOrder);
-
 
         String p_name = sharedpreferences.getString("product_name", "No name defined");//"No name defined" is the default value.
         String pr_price = sharedpreferences.getString("product_price", "No name defined"); //0 is the default value.
@@ -76,7 +74,6 @@ public class AddToCartActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter=new CartAdapter(AddToCartActivity.this,foodLists,name,price);
         recyclerView.setAdapter(adapter);
-
 
         //adding item to database
         rootRef = FirebaseDatabase.getInstance().getReference().child("foodItems");

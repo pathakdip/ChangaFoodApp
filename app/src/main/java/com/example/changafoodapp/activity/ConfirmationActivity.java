@@ -2,13 +2,16 @@ package com.example.changafoodapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.changafoodapp.R;
 
 public class ConfirmationActivity extends AppCompatActivity {
-    ImageView imgBack;
+    TextView txtHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,8 +19,14 @@ public class ConfirmationActivity extends AppCompatActivity {
         this.getSupportActionBar().hide();
         setContentView(R.layout.activity_confirmation);
 
-        imgBack=findViewById(R.id.imgBack);
+        txtHome=findViewById(R.id.txtHome);
 
+        txtHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ConfirmationActivity.this,Dashboard.class));
+            }
+        });
 
 
     }
