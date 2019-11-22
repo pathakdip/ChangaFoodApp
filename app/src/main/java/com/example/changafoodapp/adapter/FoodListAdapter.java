@@ -2,6 +2,7 @@ package com.example.changafoodapp.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,9 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
     Context context;
     String url;
 
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    SharedPreferences sharedpreferences;
+
     public FoodListAdapter(Context context,List<Food> foodList1,String url) {
         this.context=context;
         this.foodList = foodList1;
@@ -37,6 +41,9 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.food_list_row, parent, false);
         MyViewHolder viewHolder=new MyViewHolder(itemView);
+
+        sharedpreferences = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+
         return viewHolder;
     }
 
@@ -62,6 +69,13 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
         holder.imgAddtoCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString("product_name", foodItem.getTitle());
+                editor.putString("product_price", foodItem.getPrice());
+                editor.commit();
+                editor.apply();
+
                 Toast.makeText(context, "Item Added to cart", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(context, AddToCartActivity.class);
                 intent.putExtra("product_name",foodItem.getTitle());
@@ -69,6 +83,9 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
                 context.startActivity(intent);
             }
         });
+
+
+
     }
 
     @Override

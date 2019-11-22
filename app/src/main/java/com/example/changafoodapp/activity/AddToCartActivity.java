@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.text.method.CharacterPickerDialog;
@@ -38,22 +40,36 @@ public class AddToCartActivity extends AppCompatActivity {
     ArrayList<String> foodLists=new ArrayList<>();
     private DatabaseReference rootRef;
 
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    SharedPreferences sharedpreferences;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getSupportActionBar().hide();
         setContentView(R.layout.activity_add_to_cart);
 
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+
+
         //initialising views
         imgBack=findViewById(R.id.imgBack);
         btnPlaceOrder=findViewById(R.id.btnPlaceOrder);
         btnContinueOrder=findViewById(R.id.btnContinueOrder);
 
+
+        String p_name = sharedpreferences.getString("product_name", "No name defined");//"No name defined" is the default value.
+        String pr_price = sharedpreferences.getString("product_price", "No name defined"); //0 is the default value.
+
+        Log.e("AddtoCart","name from pref: "+p_name);
+        Log.e("AddtoCart","price from pref: "+pr_price);
+
         String name=getIntent().getStringExtra("product_name");
         Log.e("AddToCart","product name: "+name);
         String price=getIntent().getStringExtra("product_price");
         //foodLists.add(price);
-        foodLists.add(name);
+        foodLists.add(p_name);
 
         //displaying list of product in cart
         recyclerView=findViewById(R.id.cartRecyclerView);
@@ -102,6 +118,7 @@ public class AddToCartActivity extends AppCompatActivity {
         btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(AddToCartActivity.this,ConfirmationActivity.class));
                 Toast.makeText(AddToCartActivity.this,"Order Placed Successfully!",Toast.LENGTH_LONG).show();
             }
         });
