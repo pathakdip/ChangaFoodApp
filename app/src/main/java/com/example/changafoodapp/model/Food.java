@@ -2,12 +2,13 @@ package com.example.changafoodapp.model;
 
 public class Food {
 
-    private String title,imgUrl,price;
+    int imgUrl;
+    private String title,price;
 
     public Food() {
     }
 
-    public Food(String title,String price,String imgUrl) {
+    public Food(String title,String price,int imgUrl) {
         this.title = title;
         this.price=price;
         this.imgUrl=imgUrl;

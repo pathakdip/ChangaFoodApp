@@ -25,12 +25,12 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
 
     private List<Food> foodList;
     Context context;
-    String url;
+    int url;
 
     public static final String MyPREFERENCES = "MyPrefs" ;
     SharedPreferences sharedpreferences;
 
-    public FoodListAdapter(Context context,List<Food> foodList1,String url) {
+    public FoodListAdapter(Context context,List<Food> foodList1,int url) {
         this.context=context;
         this.foodList = foodList1;
         this.url=url;

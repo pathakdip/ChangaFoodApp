@@ -31,7 +31,8 @@ public class FoodListActivity extends AppCompatActivity {
     TextView txtCanteenTitle;
 
 
-    String imgUrl="https://www.seriouseats.com/recipes/images/2015/07/20150702-sous-vide-hamburger-anova-primary-1500x1125.jpg";
+    //String imgUrl="https://www.seriouseats.com/recipes/images/2015/07/20150702-sous-vide-hamburger-anova-primary-1500x1125.jpg";
+    int imgUrl=R.drawable.foodapp_logo;
 
 
     @Override
